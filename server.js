@@ -4,7 +4,25 @@ const { animals } = require('./data/animals')
 const app = express();
 
 function filterByQuery(query, animalsArray) {
+  let personalityTraitsArray = [];
   let filteredResults = animalsArray;
+  if (query.personalityTraits) {
+    // saves as an array, places strings into array.
+    if  (typeof query.personalityTraits === 'string') {
+      personalityTraitsArray = [query.personalityTraits];
+    } else {
+      personalityTraitsArray = query.personalityTraits;
+    }
+    personalityTraitsArray.forEach(trait => {
+      // checks personality traits agains each animal in the filtered results.
+      // makes a copy of the og filtered results and checks  if it match
+      // the trait in question. will keep only those that match
+      // leaves us with an array of animals that have each personality trait
+      filteredResults = filteredResults.filter(
+        animal => animal.personalityTraits.indexOf(trait) !== -1
+      )
+    })
+  }
   if (query.diet) {
     filteredResults = filteredResults.filter(animal => animal.diet === query.diet);
   }

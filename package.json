@@ -17,7 +17,7 @@
     "url": "https://github.com/japankid-code/zookeepr/issues"
   },
   "homepage": "https://github.com/japankid-code/zookeepr#readme",
-  "dependencies": {
+  "devDependencies": {
     "express": "^4.17.1"
   }
 }
