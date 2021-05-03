@@ -7,10 +7,12 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-// parse incoming string or array database
+// MIDDLEWARE parse incoming string or array database
 app.use(express.urlencoded({ extended: true }));
-// parse incoming JSON datas
+// MIDDLEWARE parse incoming JSON datas sent thru POST request
 app.use(express.json());
+// MIDDLEWARE serves up all files in public
+app.use(express.static('public'));
 
 function filterByQuery(query, animalsArray) {
   let personalityTraitsArray = [];
@@ -104,6 +106,22 @@ app.post('/api/animals', (req, res) => {
     const animal = createNewAnimal(req.body, animals)
     res.json(animal);
   }
+})
+// serve up index
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'))
+})
+// serve up animals
+app.get('/animals', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/animals.html'))
+})
+// serve up zookeepers!!
+app.get('/zookeepers', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/zookeepers.html'))
+})
+// serve up index at any undefined routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'))
 })
 
 app.listen(PORT, () => {
