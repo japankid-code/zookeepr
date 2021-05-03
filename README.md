@@ -1,6 +1,6 @@
 # zookeepr
 
-back-end server project for testing express js
+back-end server project for testing express js. Server is hosted on Heroku here: 
 
 ![MIT badge](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge) ![language badge](https://img.shields.io/github/languages/top/japankid-code/zookeepr?style=for-the-badge)
 
@@ -16,15 +16,14 @@ back-end server project for testing express js
 ## Installation
 
 First of all, install [node](https://nodejs.org/en/).
-Here are the list of commands used to get the application working:
 
 ```bash
-???
+
 ```
 
 ## Usage
 
-front end and database inherited from:
+front end and animal data inherited from starter code.
 Don't forget to add images!
 
 ![placeholder](https://via.placeholder.com/150)
