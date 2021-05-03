@@ -136,6 +136,15 @@
         "goofy"
       ],
       "id": "13"
+    },
+    {
+      "name": "Egg",
+      "species": "Cat-boy",
+      "diet": "omnivore",
+      "personalityTraits": [
+        "zany"
+      ],
+      "id": "14"
     }
   ]
 }
