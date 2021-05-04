@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { filterByQuery, findById, createNewAnimal, validateAnimal } = require('../../lib/zookeepers')
+const { filterByQuery, findById, createNewZookeeper, validateZookeeper } = require('../../lib/zookeepers')
 const { zookeepers } = require('../../data/zookeepers');
 
 router.get('/zookeepers', (req, res) => {
@@ -22,11 +22,11 @@ router.get('/zookeepers/:id', (req, res) => {
 router.post('/zookeepers', (req, res) => {
   // set id based on the next array index
   req.body.id = zookeepers.length.toString();
-  if (!validateAnimal(req.body)) {
+  if (!validateZookeeper(req.body)) {
     res.status(400).send('The data is not properly typed.')
   } else {
     // add animal to json file and array here
-    const animal = createNewAnimal(req.body, zookeepers)
+    const animal = createNewZookeeper(req.body, zookeepers)
     res.json(animal);
   }
 })
