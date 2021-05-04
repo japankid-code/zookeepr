@@ -1,6 +1,6 @@
 # zookeepr
 
-back-end server project for testing express js. Server is hosted on Heroku here: 
+back-end server project for testing express js. Server is hosted on Heroku [here](https://frozen-hollows-03796.herokuapp.com/).
 
 ![MIT badge](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge) ![language badge](https://img.shields.io/github/languages/top/japankid-code/zookeepr?style=for-the-badge)
 
